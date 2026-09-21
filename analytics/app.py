@@ -15,8 +15,9 @@ port_number = int(os.environ.get("APP_PORT", 5153))
 
 @app.route("/health_check")
 def health_check():
+    app.logger.info("GET /health_check HTTP/1.1 200")
     return "ok"
-
+    
 
 @app.route("/readiness_check")
 def readiness_check():
